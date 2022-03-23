@@ -15,6 +15,7 @@ public class CameraSurface extends SurfaceView implements SurfaceHolder.Callback
 
 
     private Camera.Size previewSize;
+    private byte[] buffer;
 
     public CameraSurface(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -37,12 +38,36 @@ public class CameraSurface extends SurfaceView implements SurfaceHolder.Callback
 
                 }
             });
-            camera.addCallbackBuffer(new byte[previewSize.width * previewSize.height * 3 /2]);
+            buffer = new byte[previewSize.width * previewSize.height * 3 / 2];
+            camera.addCallbackBuffer(buffer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    private void portraitData2Raw(byte[] data) {
+        int width = previewSize.width;
+        int height =previewSize.height;
+//        旋转y
+        int y_len = width * height;
+//u   y/4   v  y/4
+        int uvHeight = height/2;
 
+        int k = 0;
+        for (int j = 0; j < width; j++) {
+            for (int i = height - 1; i >= 0; i--) {
+//                存值  k++  0          取值  width * i + j
+                buffer[k++] = data[width * i + j];
+            }
+        }
+//        旋转uv
+
+        for (int j = 0; j < width; j += 2) {
+            for (int i = uvHeight - 1; i >= 0; i--) {
+                buffer[k++] = data[y_len + width * i + j];
+                buffer[k++] = data[y_len + width * i + j + 1];
+            }
+        }
+    }
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder holder) {
         startCamera();
@@ -61,6 +86,6 @@ public class CameraSurface extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void onPreviewFrame(byte[] data, Camera camera) {
-        data.
+        portraitData2Raw(data);
     }
 }
