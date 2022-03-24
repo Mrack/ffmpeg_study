@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMIdeaPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ffmpeg_study/camera1/app/src/main/res/layout/activity_main.xml" value="0.21875" />
+        <entry key="..\:/ffmpeg_study/camera1/recv/src/main/res/layout/activity_connect.xml" value="0.22" />
+        <entry key="..\:/ffmpeg_study/camera1/recv/src/main/res/layout/activity_main.xml" value="0.1421875" />
+        <entry key="..\:/ffmpeg_study/camera1/recv/src/main/res/layout/activity_remote.xml" value="0.10833333333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

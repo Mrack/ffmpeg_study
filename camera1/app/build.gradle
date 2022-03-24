@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 28
 
     defaultConfig {
         applicationId "com.example.camera1"
         minSdk 21
-        targetSdk 31
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 
@@ -35,4 +35,5 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.2'
 }

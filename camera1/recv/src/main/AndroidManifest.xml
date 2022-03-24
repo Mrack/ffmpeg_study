@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.camera1">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    package="cn.mrack.live.recv">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Camera1">
         <activity
-            android:name=".MainActivity"
+            android:name=".RemoteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ConnectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RemoteActivity">
 
     <TextView
-        android:id="@+id/ip"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center" />
 
@@ -18,14 +18,14 @@
         android:id="@+id/et_port"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:text="12001" />
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:text="192.168.3.15:12001" />
 
     <Button
         android:id="@+id/bt_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开启服务器" />
-
+        android:text="连接服务器" />
 </LinearLayout>
